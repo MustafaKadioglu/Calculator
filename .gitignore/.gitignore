@@ -1,0 +1,63 @@
+from IPython.display import clear_output
+import math
+import pdb
+
+def div_f():
+    div_nbs=int(raw_input('Please input the number which you want to divide '))
+    num = float(raw_input('Please input the divider '))
+    div_nbs/=num
+    print ('The division of the numbers = %s'% div_nbs)
+
+def sum_f():
+    n=0
+    sum_total = 0
+    num = int(raw_input(' How many numbers you want to calculate? ',))
+    while num > n:
+        for i in range(num):
+            sum_n = int(raw_input('Please enter {}. number '.format(i+1)))
+            sum_total += sum_n
+            num = num -1
+        print ' The result = {}'.format(sum_total)
+    return    
+
+def mult_f():
+    n=0
+    mult_total = 1
+    num = int(raw_input(' How many numbers you want to calculate? ',))
+    while num > n:
+        for i in range(num):
+            mult_n = int(raw_input('Please enter {}. number '.format(i+1)))
+            mult_total *= mult_n
+            num = num -1
+        print ' The result = {}'.format(mult_total)
+    return
+
+def sub_f():
+    n=1
+    num = int(raw_input(' How many numbers you want to calculate? ',))
+    sub_nbs=int(raw_input('Please input the bigest number which you will subscribe the others '))
+    while num > n:
+        for i in range(num-1):
+            mult_n = int(raw_input('Please enter {}. number '.format(i+2)))
+            sub_nbs -= mult_n
+            num = num -1
+        print ' The result = {}'.format(sub_nbs)
+    return
+
+def calc_f():
+    func = raw_input('Which function you want to choose? "Sum, Sub, Mult or Div' , )
+    if func == 'Sum':
+        sum_f()
+        calc_f()         
+    elif func == 'Sub':
+        sub_f()
+        calc_f()
+    elif func == 'Mult':
+        mult_f()
+        calc_f()
+    elif func == 'Div':
+        div_f()
+        calc_f()
+    else:
+        print ('Please enter a valid function either Sum or Sub or Mult or Div', )
+        calc_f()
